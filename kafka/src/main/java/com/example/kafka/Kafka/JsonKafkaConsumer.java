@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class JsonKafkaConsumer {
     private static final Logger LOGGER= LoggerFactory.getLogger(JsonKafkaConsumer.class);
-    @KafkaListener(topics="javaguides_json",groupId = "myGroup")
+    @KafkaListener(topics="${spring.kafka.topic-json.name}",groupId = "${spring.kafka.consumer.group-id}")
     public void consume(User user){
 //        spring kafka provided jsondeserializer will convert User json into java User object
         LOGGER.info(String.format("Json message Received -> %s ", user.toString()));
