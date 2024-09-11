@@ -12,4 +12,11 @@ public class KafkaTopicConfig {
         return TopicBuilder.name("javaguides")
                 .build();
     }
+
+    //seprate kafka topics should be created to store the message
+    @Bean
+    public NewTopic javaguidesJsonTopic(){
+        return TopicBuilder.name("javaguides_json")
+                .build();
+    }
 }
